@@ -185,11 +185,9 @@ if st.session_state.logged_in:
         
         st.table(combined_df)
         
-        # --- NEW: Download Feature ---
-        # Convert the combined DataFrame to CSV
+        # --- Download Feature ---
         csv_data = combined_df.to_csv(index=True).encode('utf-8')
         
-        # Create a download button for the CSV file
         st.download_button(
             label="Download My Timetable as CSV",
             data=csv_data,
